@@ -6,6 +6,7 @@ import com.vehiclerentalsystem.entity.User;
 
 public interface UserService {
 	public List<User> getAllusers();
+	public User saveUser(User user);
 	public User getUserById(int userId);
 	public User updateUser(User user);
 	public void deleteUser(int userId);

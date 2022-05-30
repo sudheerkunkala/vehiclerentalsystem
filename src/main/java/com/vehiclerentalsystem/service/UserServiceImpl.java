@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.vehiclerentalsystem.entity.Booking;
 import com.vehiclerentalsystem.entity.User;
 import com.vehiclerentalsystem.exception.AuthenticationFailedException;
 import com.vehiclerentalsystem.exception.UserNotFoundException;
@@ -63,6 +64,13 @@ public class UserServiceImpl implements UserService {
 			throw new AuthenticationFailedException("Username or password Invalid!!");
 		}
 		return user;
+	}
+
+	@Override
+	public User saveUser(User user) {
+		
+		Booking savedUser = userRepository.save(user);
+	    return savedUser;
 	}
 	
 }
